@@ -102,3 +102,18 @@
 
 /* Make hero text more readable on photos */
 #hero:before { background: rgba(0,0,0,0.35); }
+
+
+/* Hero background slider (2-layer crossfade) */
+#hero.hero.section { position: relative; overflow: hidden; min-height: 70vh; }
+#hero .hero-bg-layer{
+  position:absolute; inset:0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity .6s ease;
+  z-index: 0;
+}
+#hero .hero-bg-layer.is-active{ opacity: 1; }
+#hero .container{ position: relative; z-index: 2; }
