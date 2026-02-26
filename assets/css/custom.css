@@ -94,3 +94,11 @@
   @media (max-width: 991px){
     #hero .content{ margin-top: .5rem !important; }
   }
+
+
+  /* Hero image fade */
+#hero > img.hero-bg { transition: opacity .45s ease; }
+#hero > img.hero-bg.is-fading { opacity: 0; }
+
+/* Make hero text more readable on photos */
+#hero:before { background: rgba(0,0,0,0.35); }
