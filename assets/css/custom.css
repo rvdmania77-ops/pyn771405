@@ -93,6 +93,7 @@
   /* 8) 모바일에서 히어로 카드 여백 */
   @media (max-width: 991px){
     #hero .content{ margin-top: .5rem !important; }
+<<<<<<< HEAD
   }
 
 
@@ -117,3 +118,6 @@
 }
 #hero .hero-bg-layer.is-active{ opacity: 1; }
 #hero .container{ position: relative; z-index: 2; }
+=======
+  }
+>>>>>>> parent of 1fb9d11 (dd)
