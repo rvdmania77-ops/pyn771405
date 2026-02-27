@@ -105,13 +105,14 @@
   /**
    * Initiate glightbox
    */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
 
   /**
    * Initiate Pure Counter
    */
-  if (typeof PureCounter !== "undefined") {
-    new PureCounter();
-  }
+  new PureCounter();
 
   /**
    * Frequently Asked Questions Toggle
@@ -126,20 +127,19 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    if (typeof Swiper === "undefined") return;
-  
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
-  
-      if (swiperElement.classList.contains("swiper-tab") && typeof initSwiperWithCustomPagination !== "undefined") {
+
+      if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
       } else {
         new Swiper(swiperElement, config);
       }
     });
   }
+
   window.addEventListener("load", initSwiper);
 
   /**
@@ -183,33 +183,3 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const el = document.querySelector("#heroCarousel");
-  if (!el) return;
-
-  // 혹시 이미 생성돼 있으면 재사용
-  const instance = bootstrap.Carousel.getOrCreateInstance(el, {
-    interval: 2000,
-    ride: "carousel",
-    pause: false,
-    wrap: true
-  });
-
-  instance.cycle();
-});
-
-
-
-window.addEventListener("load", () => {
-  const el = document.querySelector("#heroCarousel");
-  if (el && typeof bootstrap !== "undefined") {
-    const instance = bootstrap.Carousel.getOrCreateInstance(el, {
-      interval: 2000,
-      ride: "carousel",
-      pause: false,
-      wrap: true
-    });
-    instance.cycle();
-  }
-});
