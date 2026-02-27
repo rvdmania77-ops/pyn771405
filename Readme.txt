@@ -1,6 +1,6 @@
 Thanks for downloading this template!
 
-Template Name: Medicio
-Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+Template Name: Medilab
+Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
 Author: BootstrapMade.com
 License: https://bootstrapmade.com/license/
