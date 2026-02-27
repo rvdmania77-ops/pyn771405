@@ -105,9 +105,6 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
 
   /**
    * Initiate Pure Counter
@@ -184,15 +181,17 @@
 
 })();
 
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.querySelector("#heroCarousel");
+  if (!el) return;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const heroCarousel = document.querySelector('#heroCarousel');
-  if (heroCarousel) {
-    new bootstrap.Carousel(heroCarousel, {
-      interval: 2000,
-      ride: 'carousel',
-      pause: false,
-      wrap: true
-    });
-  }
+  // 혹시 이미 생성돼 있으면 재사용
+  const instance = bootstrap.Carousel.getOrCreateInstance(el, {
+    interval: 2000,
+    ride: "carousel",
+    pause: false,
+    wrap: true
+  });
+
+  instance.cycle();
 });
