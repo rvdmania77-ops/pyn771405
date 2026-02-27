@@ -1731,3 +1731,7 @@ section,
 .hero .welcome {
   margin-top: -240px;
 }
+
+.hero .welcome h2 {
+  font-weight: 700;
+}
