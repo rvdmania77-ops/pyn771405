@@ -94,3 +94,36 @@
   @media (max-width: 991px){
     #hero .content{ margin-top: .5rem !important; }
   }
+
+
+
+  /* Hero background carousel */
+.hero{
+  position: relative;
+  overflow: hidden;
+  min-height: 620px; /* 필요시 조절 */
+}
+
+.hero-carousel{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-carousel .carousel-inner,
+.hero-carousel .carousel-item{
+  height: 100%;
+}
+
+.hero-carousel img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 기존 hero 오버레이가 ::before로 있다면 캐러셀 위에 자연스럽게 깔림 */
+.hero .container{
+  position: relative;
+  z-index: 2;
+}
